@@ -17,6 +17,8 @@ $('.carousel-control-next').click(function() {
 
 // When the user scrolls down 20px from the top of the document, shrink the navbar padding slightly
 window.onscroll = function() {scrollFunction()};
+let height = window.innerHeight;
+let width = window.innerWidth;
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -24,7 +26,21 @@ function scrollFunction() {
   } else {
     document.getElementById("navbar").style.padding = "15px 15px";
   }
-}
+} 
+
+// When the user scrolls down window height, change navbar to orange
+$(document).ready(function(){
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > (height)) {
+	    $(".navbar").css("background-color" , "rgba(0, 0, 0, 0.9)");
+	  }
+
+	  else{
+		  $(".navbar").css("background" , "transparent");  	
+	  }
+  })
+})
 
 // Multiple card carousel
 const wrapper = document.querySelector(".wrapper");
