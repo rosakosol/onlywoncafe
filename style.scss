@@ -9,6 +9,7 @@ Extra extra large	xxl	≥1400px */
 
 * {
     box-sizing: border-box;
+    outline: 1px solid red;
 }
 
 html {
@@ -21,6 +22,7 @@ $primary: #f77f00;
 $secondary: #FAE7C9;
 $tertiary: #f77f00;
 $bright: green;
+$body: #212529;
 
 /* OUTER PADDING */
 $padding-sm: 2rem;
@@ -77,11 +79,11 @@ i {
 
 a {
   text-decoration: none;
-  color: black;
+  color: $body;
 }
 
 a:hover {
-  color: black;
+  color: $body;
   text-decoration: underline;
 }
 
@@ -748,6 +750,35 @@ body.modal-open {
   }
 }
 
+/* VERTICAL TAB CONTENT */
+.d-flex {
+  margin: $padding-sm auto;
+}
+
+.nav-link {
+  color: $body;
+  font-family: "Public Sans", serif;
+  font-weight: bold;
+  font-size: 14px;
+  width: 140px;
+}
+
+.nav-link:hover {
+  color: $body;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: $primary;
+}
+
+.d-flex .image-grid {
+  margin: 0;
+}
+
+.d-flex .image-grid .col-md-3 {
+  padding: 10px;
+}
+
 
 /* LOGO BOX */
 .logo-box {
@@ -769,7 +800,7 @@ body.modal-open {
 
 /* FORMS */
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
+input[type=text], input[type=email], input[type=tel], input[type=date], select, textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */ 
     border: 1px solid #ccc; /* Gray border */

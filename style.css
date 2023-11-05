@@ -9,6 +9,7 @@ Extra large	xl	≥1200px
 Extra extra large	xxl	≥1400px */
 * {
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 html {
@@ -64,11 +65,11 @@ i {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #212529;
 }
 
 a:hover {
-  color: black;
+  color: #212529;
   text-decoration: underline;
 }
 
@@ -731,6 +732,35 @@ body.modal-open {
     grid-auto-columns: 100%;
   }
 }
+/* VERTICAL TAB CONTENT */
+.d-flex {
+  margin: 2rem auto;
+}
+
+.nav-link {
+  color: #212529;
+  font-family: "Public Sans", serif;
+  font-weight: bold;
+  font-size: 14px;
+  width: 140px;
+}
+
+.nav-link:hover {
+  color: #212529;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #f77f00;
+}
+
+.d-flex .image-grid {
+  margin: 0;
+}
+
+.d-flex .image-grid .col-md-3 {
+  padding: 10px;
+}
+
 /* LOGO BOX */
 .logo-box {
   text-align: center;
@@ -751,7 +781,7 @@ body.modal-open {
 
 /* FORMS */
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
+input[type=text], input[type=email], input[type=tel], input[type=date], select, textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */
   border: 1px solid #ccc; /* Gray border */
