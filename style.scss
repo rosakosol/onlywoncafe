@@ -76,6 +76,12 @@ i {
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
 }
 
 .active {
@@ -541,6 +547,20 @@ border-radius: 0px;;
 
   .image-grid .row:nth-child(2) {
     display: none;
+  }  
+}
+
+@media only screen and (max-width: 992px) {
+  .image-grid {
+    padding: 0;
+  }
+
+  .image-grid .col-md-3 {
+    padding: 5px;
+  }
+
+  .image-grid .row {
+    padding: 0;
   }
 }
 
@@ -824,6 +844,7 @@ footer li {
     margin-top: $padding-sm;
   }
 }
+
 
 /* COPYRIGHT BANNER */
 .copyright-banner {

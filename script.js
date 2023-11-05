@@ -15,6 +15,11 @@ $('.carousel-control-next').click(function() {
   $('.carousel').carousel('next');
 });
 
+// Activate modal
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
 // When the user scrolls down 20px from the top of the document, shrink the navbar padding slightly
 window.onscroll = function() {scrollFunction()};
 let height = window.innerHeight;
