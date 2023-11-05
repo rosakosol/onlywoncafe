@@ -737,12 +737,20 @@ body.modal-open {
   margin: 2rem auto;
 }
 
+.nav-pills {
+  margin: 2rem;
+}
+
+.me-3 {
+  margin: 2rem 0 !important;
+}
+
 .nav-link {
   color: #212529;
   font-family: "Public Sans", serif;
   font-weight: bold;
   font-size: 14px;
-  width: 140px;
+  width: 200px;
 }
 
 .nav-link:hover {
@@ -758,7 +766,7 @@ body.modal-open {
 }
 
 .d-flex .image-grid .col-md-3 {
-  padding: 10px;
+  padding: 0 1rem;
 }
 
 /* LOGO BOX */
