@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700|Public+Sans|">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <link rel="stylesheet" href="style.css">
@@ -67,20 +67,62 @@
         <div class="container center">
             <!-- 3 CARD GROUP -->
             <div class="card-group">
-                <div class="card inline-card">
-                    <img class="card-img-top" src="assets/img/breakfast.jpg" alt="Card image cap">
-                    <h5>Breakfast</h5>
+              <!-- Breakfast trigger modal -->
+                <div class="card" data-bs-toggle="modal" data-bs-target="#breakfastModal">
+                  <h5>Breakfast</h5>  
+                  <img class="card-img-top" src="assets/img/menu-breakfast.jpg" alt="Card image cap">
                 </div>
-                <div class="card inline-card">
-                    <img class="card-img-top" src="assets/img/lunch.jpg" alt="Card image cap">
-                    <h5>Lunch</h5>
+                <!-- Breakfast menu modal -->
+                <div class="modal fade" id="breakfastModal" tabindex="-1" aria-labelledby="breakfastModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="assets/img/menu-breakfast.jpg" alt="">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="card inline-card">
-                    <img class="card-img-top" src="assets/img/beverages.jpg" alt="Card image cap">
-                    <h5>Beverages</h5>
+                <!-- Lunch trigger modal -->
+                <div class="card" data-bs-toggle="modal" data-bs-target="#lunchModal">
+                  <h5>Lunch</h5>
+                  <img class="card-img-top" src="assets/img/menu-lunch.jpg" alt="Card image cap">
                 </div>
-            </div>
-            <button type="button" class="btn btn-dark">Download menu</button> 
+                <!-- Lunch menu modal -->
+                <div class="modal fade" id="lunchModal" tabindex="-1" aria-labelledby="lunchModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="assets/img/menu-lunch.jpg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Beverages trigger modal -->
+                <div class="card" data-bs-toggle="modal" data-bs-target="#beveragesModal">
+                  <h5>Beverages</h5>
+                  <img class="card-img-top" src="assets/img/menu-beverages.jpg" alt="Card image cap">
+                </div>
+                <!-- Beverages menu modal -->
+                <div class="modal fade" id="beveragesModal" tabindex="-1" aria-labelledby="beveragesModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="assets/img/menu-beverages.jpg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <a href="/assets/menu.pdf" download><button type="button" class="btn btn-dark">Download menu</button></a> 
         </div>
 
         <!-- Catering and Function CTA -->

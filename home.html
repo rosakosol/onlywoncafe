@@ -77,82 +77,61 @@
             <!-- 3 CARD GROUP -->
             <div class="card-group">
             <!-- Breakfast trigger modal -->
-            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <div class="card inline-card">
-                    <img class="card-img-top" src="assets/img/breakfast.jpg" alt="Card image cap">
-                    <h5>Breakfast</h5>
-                </div>
-            </a>
-            <!-- Breakfast menu modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+              <div class="card inline-card" data-bs-toggle="modal" data-bs-target="#breakfastModal">
+                  <img class="card-img-top" src="assets/img/breakfast.jpg" alt="Card image cap">
+                  <h5>Breakfast</h5>
+              </div>
+              <!-- Breakfast menu modal -->
+              <div class="modal fade" id="breakfastModal" tabindex="-1" aria-labelledby="breakfastModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="assets/img/menu-breakfast.jpg" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Lunch trigger modal -->
-            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <div class="card inline-card">
+              <!-- Lunch trigger modal -->
+              <div class="card inline-card" data-bs-toggle="modal" data-bs-target="#lunchModal">
                   <img class="card-img-top" src="assets/img/lunch.jpg" alt="Card image cap">
                   <h5>Lunch</h5>
               </div>
-            </a>
-            <!-- Lunch menu modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+              <!-- Lunch menu modal -->
+              <div class="modal fade" id="lunchModal" tabindex="-1" aria-labelledby="lunchModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="assets/img/menu-lunch.jpg" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Beverages trigger modal -->
-            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <div class="card inline-card">
+              <!-- Beverages trigger modal -->
+              <div class="card inline-card" data-bs-toggle="modal" data-bs-target="#beveragesModal">
                   <img class="card-img-top" src="assets/img/beverages.jpg" alt="Card image cap">
                   <h5>Beverages</h5>
               </div>
-            </a>
-            <!-- Beverages menu modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+              <!-- Beverages menu modal -->
+              <div class="modal fade" id="beveragesModal" tabindex="-1" aria-labelledby="beveragesModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="assets/img/menu-beverages.jpg" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            </div>
-            <button type="button" class="btn btn-dark">Download menu</button> 
+            <a href="/assets/menu.pdf" download><button type="button" class="btn btn-dark">Download menu</button></a> 
         </div>
 
         <!-- Catering and Function CTA -->
