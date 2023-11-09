@@ -132,6 +132,9 @@ label, input, textarea, td {
   h1 {
     font-size: 4rem;
   }
+  h2 {
+    font-size: 1.6rem;
+  }
 }
 
 
@@ -463,6 +466,12 @@ bottom: -10px;
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 992px) {
+  .card {
+    flex: 50%;
+  }
+}
+
 .card.inline-card {
   margin: 0;
   height: 100%;
@@ -504,10 +513,6 @@ border-radius: 0px;;
 @media only screen and (max-width: 992px) {
   .inline-card h5 {
     font-size: 1.8rem;
-  }
-
-  .card-title {
-    font-size: 2rem;
   }
 }
 
@@ -768,7 +773,7 @@ body.modal-open {
   font-family: "Public Sans", serif;
   font-weight: bold;
   font-size: 14px;
-  width: 200px;
+  width: 140px;
 }
 
 .nav-link:hover {
@@ -785,6 +790,53 @@ body.modal-open {
 
 .d-flex .image-grid .col-md-3 {
   padding: 0 1rem;
+}
+
+/* ONLINE ORDERING */
+.checkout-total {
+  display: none;
+}
+
+.cart-btn {
+  position: fixed;
+  bottom: 1rem;
+  width: 400px;
+  max-width: 90vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cart-btn:hover {
+  transform: translate(-50%, -4px);
+}
+
+.shopping-cart i {
+  color: black;
+  margin-right: 0;
+  padding: 0;
+}
+
+.shopping-cart button {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-align: center;
+  border-radius: 0.25rem;
+  transition: 0.15s ease-in-out;
+}
+
+.shopping-cart button:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
 }
 
 

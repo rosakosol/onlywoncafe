@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-lg navbar-transparent" id="navbar">
             <div class="container-fluid">
             <!-- CHANGE WEBSITE LOGO HERE -->
-              <a class="navbar-brand" href="#"><h2>Only Won Cafe</h2></a>
+              <a class="navbar-brand" href="#"><h2>Only Won Cafe & Co</h2></a>
               <!-- CHANGE HAMBURGER TYPE HERE -->
               <button class="hamburger hamburger-slider" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="hamburger-box">
@@ -67,7 +67,7 @@
           </div>
           <div class="card-group">
             <div class="row">
-              <div class="col-md-3 card">
+              <div class="col-md-4 card">
                 <img class="card-img-top" src="assets/img/kfc.jpg" alt="Card image cap">
                 <div class="card-body">
                 <h2 class="card-title">Korean fried chicken</h2>
@@ -75,7 +75,7 @@
                 <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>  
               </div>
               </div>
-              <div class="col-md-3 card">
+              <div class="col-md-4 card">
                   <img class="card-img-top" src="assets/img/bulgogi.jpg" alt="Card image cap">
                   <div class="card-body">
                   <h2 class="card-title">Bulgogi rice bowl</h2>
@@ -83,7 +83,7 @@
                   <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>
                   </div>
               </div>
-              <div class="col-md-3 card">
+              <div class="col-md-4 card">
                 <img class="card-img-top" src="assets/img/bulgogi.jpg" alt="Card image cap">
                 <div class="card-body">
                 <h2 class="card-title">Bulgogi rice bowl</h2>
@@ -91,37 +91,52 @@
                 <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>
                 </div>
             </div>
-            <div class="col-md-3">
-              <h2>Total</h2>
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-md-3 card">
-                  <img class="card-img-top" src="assets/img/bibimbap.jpg" alt="Card image cap">
-                  <div class="card-body">
-                  <h2 class="card-title">Bibimbap</h2>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>  
-                </div>
-              </div>
-              <div class="col-md-3 card">
-                  <img class="card-img-top" src="assets/img/tteokbokki.jpg" alt="Card image cap">
-                  <div class="card-body">
-                  <h2 class="card-title">Tteokbokki</h2>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>  
-                </div>
-              </div>
-              <div class="col-md-3 card">
-                <img class="card-img-top" src="assets/img/bulgogi.jpg" alt="Card image cap">
+            <div class="col-md-4 card">
+                <img class="card-img-top" src="assets/img/bibimbap.jpg" alt="Card image cap">
                 <div class="card-body">
-                <h2 class="card-title">Bulgogi rice bowl</h2>
+                <h2 class="card-title">Bibimbap</h2>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>
-                </div>
+                <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>  
+              </div>
+            </div>
+            <div class="col-md-4 card">
+                <img class="card-img-top" src="assets/img/tteokbokki.jpg" alt="Card image cap">
+                <div class="card-body">
+                <h2 class="card-title">Tteokbokki</h2>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>  
+              </div>
+            </div>
+            <div class="col-md-4 card">
+              <img class="card-img-top" src="assets/img/bulgogi.jpg" alt="Card image cap">
+              <div class="card-body">
+              <h2 class="card-title">Bulgogi rice bowl</h2>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-link">Add to cart <i class="bi bi-arrow-right" style="font-size: 18px"></i></button>
+              </div>
             </div>
           </div>  
-          <a href="order-now.html" class="btn btn-dark">Check out</a>  
+          <!-- Shopping cart trigger -->
+          <div class="shopping-cart" data-bs-toggle="modal" data-bs-target="#shoppingCart">
+            <button><i class="bi bi-bag-heart-fill" style="font-size: 26px"></i></button>
+          </div>
+          <!-- Shopping cart modal -->
+          <div class="modal fade" id="shoppingCart" tabindex="-1" aria-labelledby="shoppingCartLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img src="assets/img/menu-breakfast.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 checkout-total">
+            <h2>Total</h2>
+          </div>
+          <a href="order-now.html" class="btn btn-dark cart-btn">Check out</a>  
           </div>
         </div>
 
