@@ -75,14 +75,14 @@ const product = [
   },
   {
     id: 4,
-    image: 'assets/img/kfc.jpg',
-    title: 'Korean Fried Chicken',
+    image: 'assets/img/noodles.jpg',
+    title: 'Rice Noodle Soup',
     price: 14.99,
   },
   {
     id: 5,
-    image: 'assets/img/kfc.jpg',
-    title: 'Korean Fried Chicken',
+    image: 'assets/img/eggplant.jpg',
+    title: 'Eggplant Rice Bowl',
     price: 14.99,
   },
 ];
