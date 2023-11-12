@@ -9,7 +9,6 @@ Extra large	xl	≥1200px
 Extra extra large	xxl	≥1400px */
 * {
   box-sizing: border-box;
-  outline: 1px solid red;
 }
 
 html {
@@ -911,7 +910,6 @@ body.modal-open {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #f77f00;
   padding: 0 1rem;
 }
 
