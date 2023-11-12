@@ -69,7 +69,103 @@
 
       <!-- Catering enquiry form section  -->
       <div class="container">
-        
+          <form id="contactForm">
+
+            <!-- Name input -->
+            <div class="mb-3">
+              <label class="form-label" for="name">Full Name</label>
+              <input class="form-control" id="name" type="text" placeholder="Full Name" data-sb-validations="required" />
+            </div>
+
+            <!-- Email address input -->
+            <div class="mb-3">
+              <label class="form-label" for="emailAddress">Email Address</label>
+              <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
+            </div>
+
+            <!-- Mobile input -->
+            <div class="mb-3">
+              <label class="form-label" for="mobile">Phone</label>
+              <input class="form-control" id="mobile" type="phone" placeholder="Mobile Number" data-sb-validations="required, email" />
+            </div>
+
+            <!-- Event input -->
+            <div class="mb-3">
+              <label class="form-label" for="event">Event</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Corporate function
+                </label>
+              </div>
+  
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Private function
+                </label>
+              </div>
+  
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  School function
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Other
+                </label>
+              </div>
+            </div>
+
+            <!-- Order input -->
+            <div class="mb-3">
+              <label class="form-label" for="event">Order</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Cold food (sandwiches, salad bowls, cold rolls)
+                </label>
+              </div>
+  
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Hot food (rice bowls)
+                </label>
+              </div>
+  
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Beverages (soft drinks, iced drinks, smoothies, juices)
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Other
+                </label>
+              </div>
+            </div>
+
+
+            <!-- Message input -->
+            <div class="mb-3">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+            </div>
+
+            <!-- Form submit button -->
+            <div class="d-grid">
+              <button class="btn btn-dark" type="submit">Submit</button>
+            </div>
+            
+          </form>
       </div>
 
         <!-- Footer section -->

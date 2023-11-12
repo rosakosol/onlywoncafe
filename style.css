@@ -527,7 +527,7 @@ button:hover {
 }
 
 /* COLUMNS */
-.col-sm-4, .col-md-6 {
+.col-sm-4, .col-md-6, .col-md-7 {
   padding: 1rem;
 }
 
