@@ -113,9 +113,46 @@ document.getElementById('root').innerHTML = categories.map((item)=>
         </div>
     <div class='bottom'>
     <h2>${title}</h2>
-    <p>$ ${price}.00</p>`+
+    <p>$ ${price}</p>`+
     "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
     `</div>
     </div>`
   )
 }).join('')
+
+var cart =[];
+
+function addtocart(a) {
+  cart.push({...categories[a]});
+    displaycart();
+}
+
+function delElement(a){
+  cart.splice(a, 1);
+  displaycart();
+}
+
+function displaycart(a){
+  let j = 0, total=0;
+  if(cart.length==0) {
+    document.getElementById('cartItem').innerHTML = "Your cart is empty";
+    document.getElementById("total").innerHTML = "$ "+0+".00";
+  }
+  else {
+    document.getElementById('cartItem').innerHTML = cart.map((items)=>
+    {
+      var { image, title, price} = items;
+      total=total+price;
+      document.getElementById("total").innerHTML = "$ "+total;
+      return(
+        `<div class='cart-item'>
+        <div class='row-img'>
+          <img class='rowimg' src=${image}>
+        </div>
+        <p style='font-size:14px;'>${title}</p>
+        <p style='font-size:14px;'>$ ${price}</p>`+
+        "<i class='bi bi-trash' style='color:black;' onclick='delElement("+ (j++) +")'></i></div>"
+      );
+    }).join('');
+  }
+}
