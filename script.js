@@ -58,19 +58,19 @@ const product = [
   {
     id: 1,
     image: 'assets/img/bulgogi.jpg',
-    title: 'Korean Fried Chicken',
+    title: 'Bulgogi Rice Bowl',
     price: 14.99,
   },
   {
     id: 2,
     image: 'assets/img/bibimbap.jpg',
-    title: 'Korean Fried Chicken',
+    title: 'Bibimbap',
     price: 14.99,
   },
   {
     id: 3,
     image: 'assets/img/tteokbokki.jpg',
-    title: 'Korean Fried Chicken',
+    title: 'Tteokbokki',
     price: 14.99,
   },
   {
@@ -82,18 +82,6 @@ const product = [
   {
     id: 5,
     image: 'assets/img/kfc.jpg',
-    title: 'Korean Fried Chicken',
-    price: 14.99,
-  },
-  {
-    id: 6,
-    image: 'asset/img/kfc.jpg',
-    title: 'Korean Fried Chicken',
-    price: 14.99,
-  },
-  {
-    id: 7,
-    image: 'asset/img/kfc.jpg',
     title: 'Korean Fried Chicken',
     price: 14.99,
   },
@@ -146,9 +134,6 @@ function displaycart(a){
       document.getElementById("total").innerHTML = "$ "+total;
       return(
         `<div class='cart-item'>
-        <div class='row-img'>
-          <img class='rowimg' src=${image}>
-        </div>
         <p style='font-size:14px;'>${title}</p>
         <p style='font-size:14px;'>$ ${price}</p>`+
         "<i class='bi bi-trash' style='color:black;' onclick='delElement("+ (j++) +")'></i></div>"
