@@ -24,6 +24,7 @@ $('#myModal').on('shown.bs.modal', function () {
 window.onscroll = function() {scrollFunction()};
 let height = window.innerHeight;
 let width = window.innerWidth;
+let navbarHeight = navbar.offsetHeight;
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -33,19 +34,44 @@ function scrollFunction() {
   }
 } 
 
-// When the user scrolls down window height, change navbar to orange
+// When the user scrolls down window height, change navbar colour
 $(document).ready(function(){
   $(window).scroll(function(){
   	var scroll = $(window).scrollTop();
-	  if (scroll > (height)) {
+	  if (scroll > (height - 400)) {
 	    $(".navbar").css("background-color" , "rgba(0, 0, 0, 0.9)");
 	  }
-
 	  else{
 		  $(".navbar").css("background" , "transparent");  	
 	  }
   })
 })
+
+// Animate elements on scroll into viewport
+ScrollReveal({
+  reset: true,
+  distance: '60px',
+  duration: 1000,
+  delay: 0
+})
+
+ScrollReveal().reveal('.fadeInTop', {
+  origin: 'top'
+});
+
+ScrollReveal().reveal('.fadeInRight', {
+  origin: 'right',
+});
+
+ScrollReveal().reveal('.fadeInRight2', {
+  origin: 'right',
+  delay: 400
+});
+
+ScrollReveal().reveal('.fadeInRight3', {
+  origin: 'right',
+  delay: 800
+});
 
 // 
 const product = [
@@ -141,3 +167,4 @@ function displaycart(a){
     }).join('');
   }
 }
+

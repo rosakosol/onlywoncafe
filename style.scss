@@ -9,6 +9,7 @@ Extra extra large	xxl	≥1400px */
 
 * {
     box-sizing: border-box;
+    outline: 1px solid red;
 }
 
 html {
@@ -73,7 +74,7 @@ p {
 i {
   padding: 5px;
   margin-right: 10px;
-  color: white;
+  color: $primary;
 }
 
 a {
@@ -83,7 +84,6 @@ a {
 
 a:hover {
   color: $body;
-  text-decoration: underline;
 }
 
 .active {
@@ -139,6 +139,9 @@ label, input, textarea, td {
   }
 }
 
+/* CSS ANIMATIONS */
+
+
 
 /* BUTTONS */
 button:hover {
@@ -180,8 +183,6 @@ button:hover {
 .btn-dark:hover {
   background-color: $primary;
   border: none;
-  transform: translateY(-4px);
-  transition: ease 0.2s;
 }
 
 .btn-link {
@@ -192,9 +193,7 @@ button:hover {
 }
 
 .btn-link:hover {
-  color: $tertiary;
-  transform: translateY(-4px);
-  transition: ease 0.2s;
+  color: $primary;
 }
 
 .bi::before {
@@ -312,7 +311,7 @@ bottom: -10px;
   width: 100%;
   position: fixed;
   padding: 15px;
-  transition: ease 0.5s;
+  transition: ease-in-out 0.5s;
 }
 
 /* Mobile responsive design */
@@ -321,6 +320,10 @@ bottom: -10px;
     font-size: 1.2rem;
     padding: 0.75rem;
   }
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  text-decoration: none;
 }
 
 
@@ -352,7 +355,7 @@ bottom: -10px;
 
 .navbar .nav-item a:hover {
   opacity: 1.0;
-  transition: ease 0.5s;
+  transition: ease-in-out 0.5s;
 }
 
 .navbar-transparent {
@@ -472,6 +475,12 @@ bottom: -10px;
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 576px) {
+  .card {
+    flex: 100% !important;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .card {
     flex: 50%;
@@ -486,6 +495,7 @@ bottom: -10px;
 .card:hover {
   background-color: black;
   color: white;
+  transition: 0.3s ease-in-out !important;
 }
 
 .card:not(:last-child), .col-sm-4:not(:last-child), .col-md-6:not(:last-child) {
@@ -580,32 +590,68 @@ body.modal-open {
 
 
 /* IMAGE GRID */
-.image-grid .row {
-  padding-bottom: 2rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .image-grid .col-md-3 {
-    margin-bottom: $padding-sm;
-  }
-
-  .image-grid .row:nth-child(2) {
-    display: none;
-  }  
-}
-
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 576px) {
   .image-grid {
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
   }
+}
 
-  .image-grid .col-md-3 {
-    padding: 5px;
+@media only screen and (min-width: 992px) {
+  .content {
+    flex: 1 0 21%;
   }
+}
 
-  .image-grid .row {
-    padding: 0;
-  }
+.content {
+  position:relative;
+  margin-bottom: 2rem;
+}
+
+.content .content-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  margin:0;
+  padding:0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+  height:100%;
+}
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding: 0 1rem;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
 }
 
 
@@ -777,7 +823,6 @@ body.modal-open {
 .nav-link {
   color: $body;
   font-family: "Public Sans", serif;
-  font-weight: bold;
   font-size: 14px;
   width: 140px;
 }
@@ -1016,7 +1061,7 @@ input[type=submit] {
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   transform: translateY(-4px);
-  transition: ease 0.2s;
+  transition: ease-in-out 0.2s;
 }
 
 /* ACCORDION  */
@@ -1028,6 +1073,7 @@ input[type=submit]:hover {
   text-decoration: none;
 }
 
+
 .accordion .card {
   margin-bottom: 0;
 }
@@ -1037,6 +1083,10 @@ footer {
   background: $primary;
   color: $secondary;
   background: url(assets/img/broken_noise.png);
+}
+
+footer i {
+  color: white;
 }
 
 footer h3 {
