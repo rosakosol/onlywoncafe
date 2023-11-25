@@ -1047,6 +1047,12 @@ body.modal-open {
 }
 
 /* FORMS */
+form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], input[type=email], input[type=tel], input[type=date], select, textarea {
     width: 100%; /* Full width */
@@ -1078,6 +1084,11 @@ input[type=submit]:hover {
   transition: ease-in-out 0.2s;
 }
 
+.form-check-input:checked {
+  background-color: $tertiary;
+  border-color: $tertiary;
+}
+
 /* ACCORDION  */
 .accordion .btn-link {
   color: $primary;
@@ -1095,6 +1106,7 @@ input[type=submit]:hover {
 /* FOOTER */
 footer {
   background: $primary;
+  padding-top: $padding-sm;
   color: $secondary;
   background: url(assets/img/broken_noise.png);
 }
@@ -1154,10 +1166,14 @@ footer li {
   color: $secondary;
 }
 
-@media only screen and (max-width: 991px) and (min-width: 768px) {
-  .socials-box a {
-    margin-top: $padding-sm;
-  }
+.socials-box .container {
+  margin: 0;
+  padding: 0;
+}
+
+.socials-box .container a {
+  margin-right: 1rem;
+  margin-top: $padding-sm;
 }
 
 

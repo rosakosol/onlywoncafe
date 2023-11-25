@@ -1024,6 +1024,11 @@ body.modal-open {
 }
 
 /* FORMS */
+form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], input[type=email], input[type=tel], input[type=date], select, textarea {
   width: 100%; /* Full width */
@@ -1055,6 +1060,11 @@ input[type=submit]:hover {
   transition: ease-in-out 0.2s;
 }
 
+.form-check-input:checked {
+  background-color: #f77f00;
+  border-color: #f77f00;
+}
+
 /* ACCORDION  */
 .accordion .btn-link {
   color: #f77f00;
@@ -1071,6 +1081,7 @@ input[type=submit]:hover {
 /* FOOTER */
 footer {
   background: #f77f00;
+  padding-top: 2rem;
   color: #FAE7C9;
   background: url(assets/img/broken_noise.png);
 }
@@ -1130,11 +1141,16 @@ footer li {
   color: #FAE7C9;
 }
 
-@media only screen and (max-width: 991px) and (min-width: 768px) {
-  .socials-box a {
-    margin-top: 2rem;
-  }
+.socials-box .container {
+  margin: 0;
+  padding: 0;
 }
+
+.socials-box .container a {
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+
 /* COPYRIGHT BANNER */
 .copyright-banner {
   background: black;

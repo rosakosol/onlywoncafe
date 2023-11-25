@@ -77,7 +77,30 @@ ScrollReveal().reveal('.fadeInRight3', {
   delay: 800
 });
 
-// 
+// Catering order form emailJS
+function sendMail() {
+  const serviceID = "service_vfum7yj";
+  const templateID = "template_xv88by8";
+
+  var params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+  }
+
+  emailjs.send(serviceID, templateID, params)
+  .then(
+    res=>{
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+      console.log(res);
+      alert("Your catering enquiry has been sent succcessfully!");
+    })
+  .catch(err=>console.log(err));
+}
+
+// Shopping cart order form
 const product = [
   {
     id: 0,
