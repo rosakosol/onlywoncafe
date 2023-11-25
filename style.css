@@ -1065,6 +1065,10 @@ input[type=submit]:hover {
   border-color: #f77f00;
 }
 
+.g-recaptcha {
+  margin-bottom: 2rem;
+}
+
 /* ACCORDION  */
 .accordion .btn-link {
   color: #f77f00;

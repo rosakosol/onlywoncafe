@@ -1089,6 +1089,11 @@ input[type=submit]:hover {
   border-color: $tertiary;
 }
 
+// Google Recaptcha button
+.g-recaptcha {
+  margin-bottom: $padding-sm;
+}
+
 /* ACCORDION  */
 .accordion .btn-link {
   color: $primary;
