@@ -474,6 +474,15 @@ button:hover {
   height: 100%;
 }
 
+.card-text {
+  margin-bottom: 2rem;
+}
+
+.card-btn {
+  position: absolute;
+  bottom: 15px;
+}
+
 .card:hover {
   background-color: black;
   color: white;
@@ -575,6 +584,10 @@ body.modal-open {
     display: flex;
     flex-wrap: wrap;
   }
+  .content {
+    flex: 1 0 49%;
+    margin-bottom: 0;
+  }
 }
 @media only screen and (min-width: 992px) {
   .content {
@@ -583,7 +596,6 @@ body.modal-open {
 }
 .content {
   position: relative;
-  margin-bottom: 2rem;
 }
 
 .content .content-overlay {

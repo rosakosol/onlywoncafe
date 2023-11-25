@@ -55,6 +55,10 @@ ScrollReveal({
   delay: 0
 })
 
+ScrollReveal().reveal('.fadeIn', {
+  move: 0
+});
+
 ScrollReveal().reveal('.fadeInTop', {
   origin: 'top'
 });
