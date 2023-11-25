@@ -98,7 +98,14 @@ function sendMail() {
       alert("Your catering enquiry has been sent succcessfully!");
     })
   .catch(err=>console.log(err));
+
+  const captchaResponse = grecaptcha.getResponse();
+
+  if (!captchaResponse.length > 0) {
+    throw new Error("Captcha not complete!");
+  }
 }
+
 
 // Shopping cart order form
 const product = [
