@@ -22,7 +22,6 @@
              emailjs.init("ZRmnyvD5tQ1GUsJoR");
           })();
        </script>
-       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -78,52 +77,52 @@
 
       <!-- Catering enquiry form section  -->
       <div class="container fadeInTop">
-          <form name="contactForm" id="contactForm" action="?" method="POST">
+          <form name="contactForm" id="contactForm">
 
             <!-- Name input -->
             <div class="mb-3">
               <label class="form-label" for="name">Full Name</label>
-              <input class="form-control" id="name" type="text" placeholder="Full Name" data-sb-validations="required" />
+              <input class="form-control" id="name" type="text" placeholder="Full Name" required />
             </div>
 
             <!-- Email address input -->
             <div class="mb-3">
               <label class="form-label" for="email">Email Address</label>
-              <input class="form-control" id="email" type="email" placeholder="Email Address" data-sb-validations="required, email" />
+              <input class="form-control" id="email" type="email" placeholder="Email Address" required/>
             </div>
 
             <!-- Mobile input -->
             <div class="mb-3">
               <label class="form-label" for="phone">Phone</label>
-              <input class="form-control" id="phone" type="phone" placeholder="Mobile Number" data-sb-validations="required, phone" />
+              <input class="form-control" id="phone" type="phone" placeholder="Mobile Number" required/>
             </div>
 
             <!-- Event input -->
             <div class="mb-3">
               <label class="form-label">Event</label>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="corporate">
+                <input class="form-check-input" type="radio" name="events" value="corporate" id="corporate">
                 <label class="form-check-label" for="corporate">
                   Corporate function
                 </label>
               </div>
   
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="private">
+                <input class="form-check-input" type="radio" name="events" value="private" id="private">
                 <label class="form-check-label" for="private">
                   Private function
                 </label>
               </div>
   
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="school">
+                <input class="form-check-input" type="radio" name="events" value="school" id="school">
                 <label class="form-check-label" for="school">
                   School function
                 </label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="otherevent">
+                <input class="form-check-input" type="radio" name="events" value="otherevent" id="otherevent">
                 <label class="form-check-label" for="otherevent">
                   Other
                 </label>
@@ -134,29 +133,29 @@
             <div class="mb-3">
               <label class="form-label">Order</label>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="coldfood">
+                <input class="form-check-input" type="checkbox" name="order" value="coldfood" id="coldfood">
                 <label class="form-check-label" for="coldfood">
                   Cold food (sandwiches, salad bowls, cold rolls)
                 </label>
               </div>
   
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="hotfood">
+                <input class="form-check-input" type="checkbox" name="order" value="hotfood" id="hotfood">
                 <label class="form-check-label" for="hotfood">
                   Hot food (rice bowls)
                 </label>
               </div>
   
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="beverages">
+                <input class="form-check-input" type="checkbox" name="order" value="beverages" id="beverages">
                 <label class="form-check-label" for="beverages">
                   Beverages (soft drinks, iced drinks, smoothies, juices)
                 </label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="other">
-                <label class="form-check-label" for="other">
+                <input class="form-check-input" type="checkbox" name="order" value="otherfood" id="otherfood">
+                <label class="form-check-label" for="otherfood">
                   Other
                 </label>
               </div>
@@ -166,10 +165,10 @@
             <div class="mb-3">
               <label class="form-label">Budget</label>
               <select id="budget" name="budget">
-                <option value="1000"><$1000</option>
-                <option value="2500">$1000-$2500</option>
-                <option value="5000">$2500-$5000</option>
-                <option value="5000+">$5000+</option>
+                <option value="<$1000"><$1000</option>
+                <option value="$1000-$2500">$1000-$2500</option>
+                <option value="$2500-$5000">$2500-$5000</option>
+                <option value="$5000+">$5000+</option>
               </select>
             </div>
 
@@ -178,9 +177,6 @@
               <label class="form-label" for="message">Message</label>
               <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
             </div>
-
-            <div class="g-recaptcha" 
-            data-sitekey="6Lcq5xspAAAAALuzayCJYB4u1tJl4eQk9tMo8Fi3"></div>
 
             <!-- Form submit button -->
             <div class="d-grid">
@@ -192,76 +188,78 @@
 
         <!-- Footer section -->
         <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>Opening hours</h3>
-                        <table class="table">
-                            <tbody>
-                              <tr>
-                                <td>Mon</td>
-                                <td>CLOSED</td>
-                              </tr>
-                              <tr>
-                                <td>Tue</td>
-                                <td>06:00 - 15:00</td>
-                              </tr>
-                              <tr>
-                                <td>Wed</td>
-                                <td>06:00 - 15:00</td>
-                              </tr>
-                              <tr>
-                                <td>Thu</td>
-                                <td>06:00 - 15:00</td>
-                              </tr>
-                              <tr>
-                                <td>Fri</td>
-                                <td>06:00 - 15:00</td>
-                              </tr>
-                              <tr>
-                                <td>Sat</td>
-                                <td>08:00 - 15:00</td>
-                              </tr>
-                              <tr>
-                                <td>Sun</td>
-                                <td>08:00 - 15:00</td>
-                              </tr>
-                            </tbody>
-                          </table>
+          <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-6">
+                  <h3>Opening hours</h3>
+                  <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Mon</td>
+                          <td>CLOSED</td>
+                        </tr>
+                        <tr>
+                          <td>Tue</td>
+                          <td>06:00 - 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>Wed</td>
+                          <td>06:00 - 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>Thu</td>
+                          <td>06:00 - 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>Fri</td>
+                          <td>06:00 - 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>Sat</td>
+                          <td>08:00 - 15:00</td>
+                        </tr>
+                        <tr>
+                          <td>Sun</td>
+                          <td>08:00 - 15:00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+              <div class="col-md-6">
+                  <h3>Contact</h3>
+                  <table class="table">
+                      <tbody>
+                        <tr>
+                          <td><i class="bi bi-telephone-fill" style="font-size: 18px"></i>Ph: 02 1234 5678</td>
+                        </tr>
+                        <tr>
+                          <td><i class="bi bi-calendar-check-fill" style="font-size: 18px"></i>Enquiries: <a
+                            href="mailto:booking@restaurant.com.au">info@onlywoncafe.com.au</a></td>
+                        </tr>
+                        <tr>
+                          <td><i class="bi bi-envelope-fill" style="font-size: 18px"></i>Careers: <a
+                            href="mailto:booking@restaurant.com.au">careers@onlywoncafe.com.au</a></td>
+                        </tr>
+                        <tr>
+                          <td><i class="bi bi-geo-alt-fill" style="font-size: 18px"></i>123 John St, Parramatta NSW 2150</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="socials-box">
+                      <a href=""><i class="bi bi-facebook" style="font-size: 26px"></i></a>
+                      <a href=""><i class="bi bi-instagram" style="font-size: 26px"></i></a>
+                      <div class="container">
+                        <a href="order-now.html" class="btn btn-light">Order now</a>
+                        <a href="catering.html" class="btn btn-light">Catering</a>
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                        <h3>Contact</h3>
-                        <table class="table">
-                            <tbody>
-                              <tr>
-                                <td><i class="bi bi-telephone-fill" style="font-size: 18px"></i>Ph: 02 1234 5678</td>
-                              </tr>
-                              <tr>
-                                <td><i class="bi bi-calendar-check-fill" style="font-size: 18px"></i>General enquiries: <a
-                                  href="mailto:booking@restaurant.com.au">info@onlywoncafe.com.au</a></td>
-                              </tr>
-                              <tr>
-                                <td><i class="bi bi-envelope-fill" style="font-size: 18px"></i>Careers: <a
-                                  href="mailto:booking@restaurant.com.au">careers@onlywoncafe.com.au</a></td>
-                              </tr>
-                              <tr>
-                                <td><i class="bi bi-geo-alt-fill" style="font-size: 18px"></i>123 John St, Parramatta NSW 2150</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <div class="socials-box">
-                            <a href=""><i class="bi bi-facebook" style="font-size: 26px"></i></a>
-                            <a href=""><i class="bi bi-instagram" style="font-size: 26px"></i></a>
-                            <a href="order-now.html" class="btn btn-light">Order now</a>
-                            <a href="catering.html" class="btn btn-light">Catering</a>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid copyright-banner">
-                &copy Copyright - Curie Digital
-            </div>
-        </footer>
+              </div>
+          </div>
+        </div>
+      <div class="container-fluid copyright-banner">
+          &copy Copyright - Curie Digital
+      </div>
+  </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="script.js" text="type/javascript" async defer></script>
       </body>

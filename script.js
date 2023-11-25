@@ -77,8 +77,36 @@ ScrollReveal().reveal('.fadeInRight3', {
   delay: 800
 });
 
+
+// Get appended food order string for Catering form
+function getOrderValues() {  
+  var checkboxes = document.getElementsByName('order');
+  var result = "";
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      result += checkboxes[i].value + " ";
+    }
+  }
+  return result;
+}  
+
 // Catering order form emailJS
 function sendMail() {
+  // Validate form first
+  if ((document.forms["contactForm"]["name"].value) == "") {
+    alert("Name must be filled out!");
+    return false;
+  }
+  else if ((document.forms["contactForm"]["email"].value) == "") {
+    alert("Email must be filled out!");
+    return false;
+  } 
+  else if ((document.forms["contactForm"]["phone"].value) == "") {
+    alert("Phone must be filled out!");
+    return false;
+  } 
+
+  // If form is valid, then send email order to emailJS
   const serviceID = "service_vfum7yj";
   const templateID = "template_xv88by8";
 
@@ -86,6 +114,10 @@ function sendMail() {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
     phone: document.getElementById("phone").value,
+    events: document.querySelector('input[name="events"]:checked').value,
+    order: getOrderValues(),
+    budget: document.getElementById("budget").value,
+    message: document.getElementById("message").value,
   }
 
   emailjs.send(serviceID, templateID, params)
@@ -94,129 +126,12 @@ function sendMail() {
       document.getElementById("name").value = "";
       document.getElementById("email").value = "";
       document.getElementById("phone").value = "";
+      document.querySelector('input[name="events"]:checked').value = "",
+      result = "",
+      document.getElementById("budget").value = "",
+      document.getElementById("message").value = "",
       console.log(res);
       alert("Your catering enquiry has been sent succcessfully!");
     })
   .catch(err=>console.log(err));
 }
-
-const form  = document.querySelector('form');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const captchaResponse = grecaptcha.getResponse();
-
-  if (!captchaResponse.length > 0) {
-    throw new Error("Captcha not complete!");
-  }
-
-  const fd = new FormData(e.target);
-  const params = new URLSearchParams(fd);
-
-  fetch('http://httpbin.org/post', {
-    method: "POST",
-    body: params,
-  })
-
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.error(err))
-})
-
-
-// Shopping cart order form
-const product = [
-  {
-    id: 0,
-    image: 'assets/img/kfc.jpg',
-    title: 'Korean Fried Chicken',
-    price: 14.99,
-  },
-  {
-    id: 1,
-    image: 'assets/img/bulgogi.jpg',
-    title: 'Bulgogi Rice Bowl',
-    price: 14.99,
-  },
-  {
-    id: 2,
-    image: 'assets/img/bibimbap.jpg',
-    title: 'Bibimbap',
-    price: 14.99,
-  },
-  {
-    id: 3,
-    image: 'assets/img/tteokbokki.jpg',
-    title: 'Tteokbokki',
-    price: 14.99,
-  },
-  {
-    id: 4,
-    image: 'assets/img/noodles.jpg',
-    title: 'Rice Noodle Soup',
-    price: 14.99,
-  },
-  {
-    id: 5,
-    image: 'assets/img/eggplant.jpg',
-    title: 'Eggplant Rice Bowl',
-    price: 14.99,
-  },
-];
-
-const categories = [...new Set(product.map((item)=>
-  { return item}))]
-  let i = 0;
-
-document.getElementById('root').innerHTML = categories.map((item)=>
-{
-  var {image, title, price} = item;
-  return(
-    `<div class='box'>
-      <div class='img-box'>
-        <img class='images' src=${image}></img>
-        </div>
-    <div class='bottom'>
-    <h2>${title}</h2>
-    <p>$ ${price}</p>`+
-    "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
-    `</div>
-    </div>`
-  )
-}).join('')
-
-var cart =[];
-
-function addtocart(a) {
-  cart.push({...categories[a]});
-    displaycart();
-}
-
-function delElement(a){
-  cart.splice(a, 1);
-  displaycart();
-}
-
-function displaycart(a){
-  let j = 0, total=0;
-  if(cart.length==0) {
-    document.getElementById('cartItem').innerHTML = "Your cart is empty";
-    document.getElementById("total").innerHTML = "$ "+0+".00";
-  }
-  else {
-    document.getElementById('cartItem').innerHTML = cart.map((items)=>
-    {
-      var { image, title, price} = items;
-      total=total+price;
-      document.getElementById("total").innerHTML = "$ "+total;
-      return(
-        `<div class='cart-item'>
-        <p style='font-size:14px;'>${title}</p>
-        <p style='font-size:14px;'>$ ${price}</p>`+
-        "<i class='bi bi-trash' style='color:black;' onclick='delElement("+ (j++) +")'></i></div>"
-      );
-    }).join('');
-  }
-}
-
