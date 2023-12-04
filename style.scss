@@ -9,6 +9,7 @@ Extra extra large	xxl	≥1400px */
 
 * {
     box-sizing: border-box;
+    outline: 1px solid red;
 }
 
 html {
@@ -613,6 +614,46 @@ body.modal-open {
   padding-right: 0 !important;
 }
 
+/* SHOPPING CART SECTION */
+.cart-navbar {
+  height: 50px;
+  width: 75px;
+  right: 10px;
+  bottom: 10px;
+  text-align: center;
+  position: fixed;
+  border-radius: 20px;
+  background-color: $primary;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.cart-navbar.full {
+  width: calc(100% - 20px);
+  position: fixed;
+}
+
+.cart {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cart i {
+  color: white;
+}
+
+.cartAmount {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
 
 /* IMAGE GRID */
 @media only screen and (min-width: 576px) {
@@ -688,7 +729,6 @@ body.modal-open {
   left: 50%;
   opacity: 1;
 }
-
 
 
 /* CAROUSEL */
@@ -886,7 +926,7 @@ form {
 }
 
 
-/* Style inputs with type="text", select elements and textareas */
+/* INPUTS */
 input[type=text], input[type=email], input[type=tel], input[type=date], select, textarea {
     width: 100%; /* Full width */
     font-family: 'Public Sans', serif;
