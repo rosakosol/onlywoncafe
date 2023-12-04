@@ -135,3 +135,106 @@ function sendMail() {
     })
   .catch(err=>console.log(err));
 }
+
+
+// Shopping cart on order now
+let shop = document.getElementById("shop")
+
+let shopItemsData = [{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"kfc",
+  name:"Korean fried chicken",
+  price:"14.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+}
+];
+
+console.log(shop);
+
+let generateShop =()=>{
+  return (shop.innerHTML = shopItemsData.map((x)=>{
+    return `
+    <div class="col-md-6 card item">
+                <img class="card-img-top" src="assets/img/kfc.jpg" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title">Korean fried chicken</h5>
+                <p class="card-text">Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.</p>
+                <div class="price-quantity">
+                  <h3>$14</h3>
+                  <div class="quantity-btns">
+                    <i class="bi bi-dash-lg"></i>
+                    <div class="quantity"><h3>0</h3></div>
+                    <i class="bi bi-plus-lg"></i>
+                    <button type="button" class="btn btn-dark">Add to cart </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `;
+  }));
+};
+
+generateShop();

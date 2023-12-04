@@ -595,6 +595,7 @@ body.modal-open {
 
 /* SHOPPING CART SECTION */
 .cart-navbar {
+  z-index: 1000;
   height: 50px;
   width: 75px;
   right: 10px;
@@ -609,6 +610,11 @@ body.modal-open {
 .cart-navbar.full {
   width: calc(100% - 20px);
   position: fixed;
+}
+
+.item:hover {
+  background-color: white !important;
+  color: #212529;
 }
 
 .cart {
@@ -629,6 +635,33 @@ body.modal-open {
   position: absolute;
   right: 20px;
   bottom: 20px;
+}
+
+.quantity-btns {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #f77f00;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.quantity-btns i {
+  padding: 5px;
+  margin-right: 0;
+  color: #212529;
+}
+
+.quantity-btns .btn {
+  border-radius: 0;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  padding: 10px;
+}
+
+.quantity h3 {
+  color: #212529;
 }
 
 /* IMAGE GRID */
