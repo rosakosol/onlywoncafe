@@ -142,28 +142,28 @@ let shop = document.getElementById("shop")
 
 let shopItemsData = [{
   id:"kfc",
-  name:"Korean fried chicken",
+  name:"Korean Fried Chicken",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
   img:"assets/img/kfc.jpg"
 },
 {
-  id:"kfc",
-  name:"Korean fried chicken",
+  id:"bulgogi",
+  name:"Bulgogi Rice Bowl",
+  price:"4.99",
+  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
+  img:"assets/img/kfc.jpg"
+},
+{
+  id:"bibimbap",
+  name:"Bibimbap",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
   img:"assets/img/kfc.jpg"
 },
 {
-  id:"kfc",
-  name:"Korean fried chicken",
-  price:"14.99",
-  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
-},
-{
-  id:"kfc",
-  name:"Korean fried chicken",
+  id:"tteokbokki",
+  name:"Tteokbokki",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
   img:"assets/img/kfc.jpg"
@@ -214,16 +214,19 @@ let shopItemsData = [{
 
 console.log(shop);
 
+
+
 let generateShop =()=>{
   return (shop.innerHTML = shopItemsData.map((x)=>{
+    let {id, name, price, desc, img} =x;
     return `
-    <div class="col-md-6 card item">
-                <img class="card-img-top" src="assets/img/kfc.jpg" alt="Card image cap">
+    <div id=product-id-${id} class="col-md-6 card item">
+                <img class="card-img-top" src=${img} alt="Card image cap">
                 <div class="card-body">
-                <h5 class="card-title">Korean fried chicken</h5>
-                <p class="card-text">Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.</p>
+                <h5 class="card-title">${name}</h5>
+                <p class="card-text">${desc}</p>
                 <div class="price-quantity">
-                  <h3>$14</h3>
+                  <h3>$ ${price}</h3>
                   <div class="quantity-btns">
                     <i class="bi bi-dash-lg"></i>
                     <div class="quantity"><h3>0</h3></div>
@@ -238,3 +241,7 @@ let generateShop =()=>{
 };
 
 generateShop();
+
+let increment = ()=> {}
+let decrement = ()=> {}
+let update = ()=> {}
