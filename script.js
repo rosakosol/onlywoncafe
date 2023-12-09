@@ -3,18 +3,6 @@ $('.hamburger').click (function(){
     $(this).toggleClass('is-active');
   });
 
-$('.carousel').carousel({
-  interval: false
-})
-
-$('.carousel-control-prev').click(function() {
-  $('.carousel').carousel('prev');
-});
-
-$('.carousel-control-next').click(function() {
-  $('.carousel').carousel('next');
-});
-
 // Activate modal
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
@@ -140,6 +128,8 @@ function sendMail() {
 // Shopping cart on order now
 let shop = document.getElementById("shop")
 
+let basket = [];
+
 let shopItemsData = [{
   id:"kfc",
   name:"Korean Fried Chicken",
@@ -218,7 +208,7 @@ console.log(shop);
 
 let generateShop =()=>{
   return (shop.innerHTML = shopItemsData.map((x)=>{
-    let {id, name, price, desc, img} =x;
+    let {id, name, price, desc, img} = x;
     return `
     <div id=product-id-${id} class="col-md-6 card item">
                 <img class="card-img-top" src=${img} alt="Card image cap">
@@ -228,20 +218,62 @@ let generateShop =()=>{
                 <div class="price-quantity">
                   <h3>$ ${price}</h3>
                   <div class="quantity-btns">
-                    <i class="bi bi-dash-lg"></i>
-                    <div class="quantity"><h3>0</h3></div>
-                    <i class="bi bi-plus-lg"></i>
+                    <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                    <div id=${id} class="quantity"><h3>0</h3></div>
+                    <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
                     <button type="button" class="btn btn-dark">Add to cart </button>
                   </div>
                 </div>
               </div>
             </div>
             `;
-  }));
+  })
+  .join(""));
 };
 
 generateShop();
 
-let increment = ()=> {}
-let decrement = ()=> {}
-let update = ()=> {}
+let increment = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x)=> x.id === selectedItem.id);
+  
+  if(search === undefined){
+    basket.push({
+      id: selectedItem.id,
+      item: 1,
+    });
+  }
+  else{
+    search.item += 1;
+  }
+  console.log(basket);
+  update(selectedItem.id);
+};
+
+let decrement = (id)=> {
+  let selectedItem = id;
+  let search = basket.find((x)=> x.id === selectedItem.id);
+  
+  if(search === undefined){
+    basket.push({
+      id: selectedItem.id,
+      item: 1,
+    });
+  }
+  else{
+    search.item -= 1;
+  }
+
+  update(selectedItem.id);
+};
+
+let update = (id) => {
+  let search = basket.find((x) => x.id === id)
+  // 
+  document.getElementById(id).innerHTML = search.item;
+  calculation();
+};
+
+let calculation =()=>{
+  console.log("calculation function is running");
+};
