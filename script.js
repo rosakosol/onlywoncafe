@@ -142,64 +142,57 @@ let shopItemsData = [{
   name:"Bulgogi Rice Bowl",
   price:"4.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
+  img:"assets/img/bulgogi.jpg"
 },
 {
   id:"bibimbap",
   name:"Bibimbap",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
+  img:"assets/img/bibimbap.jpg"
 },
 {
   id:"tteokbokki",
   name:"Tteokbokki",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
+  img:"assets/img/tteokbokki.jpg"
 },
 {
-  id:"kfc",
+  id:"eggplant",
   name:"Korean fried chicken",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
+  img:"assets/img/eggplant.jpg"
 },
 {
-  id:"kfc",
+  id:"noodles",
   name:"Korean fried chicken",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
+  img:"assets/img/noodles.jpg"
 },
 {
-  id:"kfc",
+  id:"porkbelly",
   name:"Korean fried chicken",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
+  img:"assets/img/porkbelly.jpg"
 },
 {
-  id:"kfc",
+  id:"jajangmyeon",
   name:"Korean fried chicken",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
+  img:"assets/img/jajangmyeon.jpg"
 },
 {
-  id:"kfc",
+  id:"spicynoodles",
   name:"Korean fried chicken",
   price:"14.99",
   desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
+  img:"assets/img/spicynoodles.jpg"
 },
-{
-  id:"kfc",
-  name:"Korean fried chicken",
-  price:"14.99",
-  desc:"Crispy Korean-style fried chicken with your choice of flavour, from sweet to spicy.",
-  img:"assets/img/kfc.jpg"
-}
 ];
 
 console.log(shop);
@@ -210,7 +203,7 @@ let generateShop =()=>{
   return (shop.innerHTML = shopItemsData.map((x)=>{
     let {id, name, price, desc, img} = x;
     return `
-    <div id=product-id-${id} class="col-md-6 card item">
+    <div id=product-id-${id} class="col-md-4 card item">
                 <img class="card-img-top" src=${img} alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">${name}</h5>
