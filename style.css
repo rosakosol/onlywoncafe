@@ -504,10 +504,6 @@ button:hover {
   transition: 0.3s ease-in-out !important;
 }
 
-.card:not(:last-child), .col-sm-4:not(:last-child), .col-md-6:not(:last-child) {
-  margin-bottom: 2rem;
-}
-
 .card-img, .card-img-top {
   border-radius: 0px;
 }
@@ -604,10 +600,6 @@ body.modal-open {
   font-size: 2rem;
 }
 
-.item .card-text {
-  flex-grow: 1;
-}
-
 .cart-navbar {
   z-index: 1000;
   height: 50px;
@@ -654,6 +646,10 @@ body.modal-open {
 .card-body {
   display: flex;
   flex-direction: column;
+}
+
+.item .card-text {
+  flex-grow: 1;
 }
 
 .price-quantity {
