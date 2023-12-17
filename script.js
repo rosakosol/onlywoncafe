@@ -128,7 +128,7 @@ function sendMail() {
 // Shopping cart on order now
 let shop = document.getElementById("shop")
 
-let basket = [];
+let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 let shopItemsData = [{
   id:"kfc",
@@ -202,6 +202,7 @@ console.log(shop);
 let generateShop =()=>{
   return (shop.innerHTML = shopItemsData.map((x)=>{
     let {id, name, price, desc, img} = x;
+    let search = basket.find((x)=> x.id === id) || [];
     return `
     <div id=product-id-${id} class="col-md-4 card item">
                 <img class="card-img-top" src=${img} alt="Card image cap">
@@ -212,7 +213,7 @@ let generateShop =()=>{
                   <h3>$ ${price}</h3>
                   <div class="quantity-btns">
                     <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-                    <div id=${id} class="quantity"><h3>0</h3></div>
+                    <div id=${id} class="quantity"><h3>${search.item === undefined? 0: search.item}</h3></div>
                     <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
                     <button type="button" class="btn btn-dark">Add to cart </button>
                   </div>
@@ -239,34 +240,37 @@ let increment = (id) => {
   else{
     search.item += 1;
   }
-  console.log(basket);
+  localStorage.setItem("data", JSON.stringify(basket));
+  // console.log(basket);
   update(selectedItem.id);
 };
 
 let decrement = (id)=> {
   let selectedItem = id;
   let search = basket.find((x)=> x.id === selectedItem.id);
+
+  if(search === undefined) return
   
-  if(search === undefined){
-    basket.push({
-      id: selectedItem.id,
-      item: 1,
-    });
-  }
+  if(search.item === 0) return
   else{
     search.item -= 1;
   }
-
+  basket = basket.filter((x)=> x.item !== 0);
+  // console.log(basket);
   update(selectedItem.id);
+
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 let update = (id) => {
   let search = basket.find((x) => x.id === id)
-  // 
   document.getElementById(id).innerHTML = search.item;
   calculation();
 };
 
 let calculation =()=>{
-  console.log("calculation function is running");
+  let cartIcon = document.getElementById("cartAmount");
+  cartIcon.innerHTML = basket.map((x)=>x.item).reduce((x, y)=>x + y, 0);
 };
+
+calculation();
