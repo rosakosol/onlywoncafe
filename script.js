@@ -132,11 +132,11 @@ let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 let generateShop =()=>{
   return (shop.innerHTML = shopItemsData.map((x)=>{
-    let {id, name, price, desc, img} = x;
+    let {id, name, price, desc, img, alt} = x;
     let search = basket.find((x)=> x.id === id) || [];
     return `
     <div id=product-id-${id} class="col-md-4 card item">
-                <img class="card-img-top" src=${img} alt="Card image cap">
+                <img class="card-img-top" src=${img} alt=${alt}>
                 <div class="card-body">
                 <h5 class="card-title">${name}</h5>
                 <p class="card-text">${desc}</p>

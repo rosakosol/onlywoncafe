@@ -577,6 +577,7 @@ border-radius: 0px;;
 .row {
   margin: 0;
   --bs-gutter-x: 0;
+  justify-content: space-around;
 }
 
 .row img {
@@ -627,6 +628,10 @@ border-radius: 0px;;
 
 body.modal-open {
   padding-right: 0 !important;
+}
+
+.story-section .row {
+  margin-bottom: 8rem;
 }
 
 /* SHOPPING CART SECTION */
