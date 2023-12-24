@@ -9,7 +9,6 @@ Extra large	xl	≥1200px
 Extra extra large	xxl	≥1400px */
 * {
   box-sizing: border-box;
-  outline: 1px solid red;
 }
 
 html {
@@ -45,6 +44,12 @@ h3 {
   color: #f77f00;
 }
 
+h4 {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 h5 {
   font-family: "Public Sans", serif;
   font-weight: bold;
@@ -67,6 +72,16 @@ i {
 a {
   text-decoration: none;
   color: #212529;
+}
+
+.a-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-link h3 {
+  margin: 0;
 }
 
 a:hover {
@@ -123,7 +138,6 @@ label, input, textarea, td {
     font-size: 2rem;
   }
 }
-/* CSS ANIMATIONS */
 /* BUTTONS */
 button:hover {
   cursor: pointer;
@@ -677,6 +691,7 @@ body.modal-open {
   padding: 5px;
   margin-right: 0;
   color: #212529;
+  cursor: pointer;
 }
 
 .quantity-btns .btn {
@@ -689,6 +704,84 @@ body.modal-open {
 
 .quantity h3 {
   color: #212529;
+}
+
+/* CHECKOUT PAGE */
+.checkout-section {
+  display: flex;
+}
+
+.checkout-section .container {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.checkout-section .container:last-child {
+  justify-content: flex-end;
+}
+
+.checkout-page {
+  padding-top: 0;
+}
+
+.checkout-page .container {
+  margin: 0 auto;
+}
+
+.checkout-section .cart a, .checkout-section .cart i {
+  color: #f77f00;
+  padding: 0;
+  margin: 0;
+}
+
+.checkout-section .cartAmount {
+  position: relative;
+  left: 0px;
+  bottom: 10px;
+  color: #f77f00;
+}
+
+.cart-item {
+  margin-bottom: 2rem;
+}
+
+.title-price {
+  padding: 1rem;
+}
+
+.title-price-x {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.remove-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0.7;
+}
+
+.remove-btn i {
+  color: #212529;
+}
+
+.remove-btn h6 {
+  margin: 0;
+}
+
+.title-price .quantity-btns {
+  justify-content: flex-start;
+}
+
+.title-price .quantity-btns h4 {
+  margin: 10px;
+}
+
+.label {
+  text-align: center;
 }
 
 /* IMAGE GRID */
