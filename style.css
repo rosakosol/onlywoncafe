@@ -726,6 +726,11 @@ body.modal-open {
   padding-top: 0;
 }
 
+@media only screen and (min-width: 768px) {
+  .checkout-page {
+    max-width: 1200px;
+  }
+}
 .checkout-page .container {
   margin: 0 auto;
 }
