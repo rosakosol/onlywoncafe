@@ -551,6 +551,7 @@ button:hover {
 .row {
   margin: 0;
   --bs-gutter-x: 0;
+  justify-content: space-around;
 }
 
 .row img {
@@ -601,6 +602,11 @@ button:hover {
 
 body.modal-open {
   padding-right: 0 !important;
+}
+
+/* OUR STORY SECTION */
+.story-section .row {
+  margin-bottom: 8rem;
 }
 
 /* SHOPPING CART SECTION */
@@ -1118,7 +1124,7 @@ footer {
   background: #f77f00;
   padding-top: 2rem;
   color: #FAE7C9;
-  background: url(assets/img/broken_noise.png);
+  background: url(assets/img/broken_noise.webp);
 }
 
 footer i {
