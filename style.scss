@@ -431,9 +431,10 @@ bottom: -10px;
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+// On large screens, hide full-width images
+@media only screen and (min-width: 992px) {
   .container-fluid img {
-    width: 100%;
+    display: none;
   }
 }
 
